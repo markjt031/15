@@ -46,5 +46,12 @@ def run(params: ActionParams) -> None:
         'data': {
             'list': list_name,
             'result': result
-        }
+        },
+        'widget': TodosListWidget(WidgetOptions(
+            id=widget_id,
+            params={
+                'list_name': list_name,
+                'todos': memory.get_todo_items(list_name)
+            }
+        ))
     })
